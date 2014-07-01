@@ -11,7 +11,7 @@ gem 'sprockets'
 gem 'bootstrap-sass'
 
 gem 'sass-rails'
-
+gem 'devise'
 gem 'pg'
 
 gem 'spring',        group: :development

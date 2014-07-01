@@ -11,12 +11,14 @@ gem 'sprockets'
 gem 'bootstrap-sass'
 
 gem 'sass-rails'
+
+gem 'pg'
+
 gem 'spring',        group: :development
 group :development, :test do
      gem 'sqlite3'
 end
 
 group :production do
-     
      gem 'rails_12factor'
 end

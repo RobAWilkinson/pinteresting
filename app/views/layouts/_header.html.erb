@@ -17,18 +17,30 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li>
-                <%= link_to "", root_path, class: "glyphicon glyphicon-home btn btn-default" %>
+              <button type="button" class="btn btn-default btn-sm">
+               <span class="glyphicon glyphicon-home"></span>
+                <%= link_to "Home", root_path -%>
+              </button>
             </li> 
             <li>
-                <%= link_to "", about_path, class: " glyphicon glyphicon-info-sign btn btn-default"%>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-info-sign"></span>
+                <%= link_to "About", about_path  -%>
+              </button>
               
             </li> 
             <li>
-              <%= link_to "Account Settings", edit_user_registration_path %>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-wrench"></span>
+                <%= link_to "Account Settings", edit_user_registration_path -%>
+              </button>
             </li>
             <% if user_signed_in? %> 
               <li>
-                  <%= link_to "", destroy_user_session_path, method: :delete,  class: " glyphicon glyphicon-off btn btn-default"%>
+                <button class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-off"></span>
+                  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+                </button>
               </li> 
             <% end %>
           </ul>

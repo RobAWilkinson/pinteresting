@@ -3,14 +3,12 @@
     <h1>Listing pins</h1>
   </div>
   <div class="panel-body">
-<<<<<<< HEAD
     <table class="table table-striped">
-=======
     <table class="table table-striped table-hover">
->>>>>>> 9b81f84
       <thead>
         <tr>
           <th>Description</th>
+          <th>User Id</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -19,6 +17,7 @@
         <% @pins.each do |pin| %>
           <tr>
             <td><%= pin.description %></td>
+            <td><%= pin.user.email if pin.user %></td>
             <td><%= link_to 'Show', pin %></td>
             <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
             <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>

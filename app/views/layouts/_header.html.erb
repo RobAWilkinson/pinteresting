@@ -17,31 +17,45 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <button type="button" class="btn btn-default btn-sm">
-               <span class="glyphicon glyphicon-home"></span>
-                <%= link_to "Home", root_path -%>
-              </button>
+                <%= link_to root_path, class: "btn btn-default" do-%>
+                  <span class="glyphicon glyphicon-home">
+                  </span>
+                  Home
+                <% end %>
             </li> 
             <li>
-              <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-info-sign"></span>
-                <%= link_to "About", about_path  -%>
-              </button>
-              
+              <%= link_to about_path, class: "btn btn-default" do-%>
+                <span class="glyphicon glyphicon-info-sign">
+                </span>
+                About
+              <% end %>              
             </li> 
             <li>
-              <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-wrench"></span>
-                <%= link_to "Account Settings", edit_user_registration_path -%>
-              </button>
+               <%= link_to edit_user_registration_path, class: "btn btn-default" do-%>
+                <span class="glyphicon glyphicon-wrench">
+                </span>
+                Account Settings
+              <% end %> 
             </li>
             <% if user_signed_in? %> 
               <li>
-                <button class="btn btn-default btn-sm">
-                  <span class="glyphicon glyphicon-off"></span>
-                  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-                </button>
+                  <%= link_to pins_path, class: "btn btn-default" do %>
+                    <span class="glyphicon glyphicon-star  ">
+                    </span>
+                    View Pins
+                  <% end %>
               </li> 
+              
+            <% end %>
+            <% if user_signed_in? %> 
+              <li>
+                  <%= link_to destroy_user_session_path, class: "btn btn-default", method: :delete do %>
+                    <span class="glyphicon glyphicon-log-out  ">
+                    </span>
+                    Log out
+                  <% end %>
+              </li> 
+
             <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->

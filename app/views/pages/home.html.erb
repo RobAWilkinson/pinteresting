@@ -2,6 +2,7 @@
 	<h1>Welcome to my app</h1>
 		<% if user_signed_in? %>
 			#do something
+      <%= link_to "View Pins", pins_path %>
 		<% else %>
 
 			<p>
